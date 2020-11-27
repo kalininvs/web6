@@ -17,6 +17,8 @@ var volumeScale = document.getElementById('audio-hud__volume');
 var speedSelect = document.getElementById('audio-hud__speed');
 var prevAudio = document.getElementById('audio-hud__prev');
 var nextAudio = document.getElementById('audio-hud__next');
+var prevTime = document.getElementById('audio-hud__prevtime');
+var nextTime = document.getElementById('audio-hud__nexttime');
 var dataSrc = ['audio/sound1.mp3','audio/sound2.mp3'];
 playlist.addEventListener('click',clickPlaylist); //клик на песню
 actionButton.addEventListener('click',audioPlayStop); //запуск воспроизведения
@@ -29,6 +31,8 @@ speedSelect.addEventListener('change',audioChangeSpeed);//меняем скор�
 fileLoad.addEventListener('change',fileAudio); //загрузка песни
 prevAudio.addEventListener('click',prevOrNextSong);//предыдущая песня
 nextAudio.addEventListener('click',prevOrNextSong);//следующая песня
+prevTime.addEventListener('click',nextOrPrevTime);//предыдущая песня
+nextTime.addEventListener('click',nextOrPrevTime);//следующая песня
 document.addEventListener('keydown', function(event) {
     if(event.key == 'A'||event.key=='a'||event.key=='ф'||event.key == 'Ф') {
         prevOrNextSong("audio-hud__prev");
@@ -59,7 +63,24 @@ document.addEventListener('keydown', function(event) {
         }
     }
     
-})
+});
+function nextOrPrevTime(e) {
+    if(e.target.id=="audio-hud__prevtime")
+    {
+        if(Number(audioPlayer.currentTime)>30)
+        {
+            audioPlayer.currentTime -= 30;
+        } else {audioPlayer.currentTime = 0; }
+        
+    }
+    if(e.target.id=="audio-hud__nexttime")
+    {
+        if(Number(audioPlayer.duration)-Number(audioPlayer.currentTime)>30)
+        {
+            audioPlayer.currentTime += 30;
+        } else {audioPlayer.currentTime = 0; }
+    }
+}
 onload = new function(){
     loadplaylist();
 }
@@ -123,8 +144,8 @@ function musicdelete(e){
     if (e.target.nodeName === 'BUTTON'){
         dataSrc.splice(e.target.value,1);
         console.log(dataSrc);
-        e.target.closest('li').remove()
-      }
+        e.target.closest('li').remove();
+    }
 }
 
 function loadplaylist(){

@@ -1,4 +1,5 @@
 .audio-container {
+    cursor: pointer;
     background:#000;
     width:80%;
     color:#fff;
@@ -9,6 +10,7 @@
 }
 
 .audio-hud {
+    cursor: pointer;
     margin:0;
     padding:1px;
 }
@@ -25,11 +27,16 @@
 }
 
 .audio-hud__action_play {
-    background:#ccc;
-    border-radius:0 100px 100px 0;
+    margin-left: 5px;
+    width: 0; 
+    height: 0;
+    border-top: 15px solid transparent;
+    border-left: 30px solid green;
+    border-bottom: 15px solid transparent;
 }
 
 .audio-hud__action_pause {
+    margin-left: 5px;
     background:#c00;
 }
 
@@ -56,6 +63,15 @@
     font-size: 22px;
 }
 .audio-hud__next {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 22px;
+}
+.audio-hud__prevtime {
+    margin-left: 5px;
+    font-size: 22px;
+}
+.audio-hud__nexttime {
     margin-left: 5px;
     margin-right: 5px;
     font-size: 22px;
