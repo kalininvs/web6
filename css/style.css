@@ -1,0 +1,75 @@
+.audio-container {
+    background:#000;
+    width:80%;
+    color:#fff;
+}
+
+.audio-player {
+    width:100%;
+}
+
+.audio-hud {
+    margin:0;
+    padding:1px;
+}
+
+.audio-hud__element {
+    cursor:pointer;
+    display:inline-block;
+    vertical-align:middle;
+    height:30px;
+}
+
+.audio-hud__action {
+    width:30px;
+}
+
+.audio-hud__action_play {
+    background:#ccc;
+    border-radius:0 100px 100px 0;
+}
+
+.audio-hud__action_pause {
+    background:#c00;
+}
+
+.audio-hud__mute {
+    width:30px;
+    border-radius:100px 100px 100px 100px;
+}
+
+.audio-hud__mute_true {
+    background:#c00;
+}
+
+.audio-hud__mute_false {
+    background:#ccc;
+}
+
+.audio-hud__download {
+    background:#ccc;
+    width:30px;
+    border-radius:0 0 100px 100px;
+}
+.audio-hud__prev {
+    margin-left: 5px;
+    font-size: 22px;
+}
+.audio-hud__next {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 22px;
+}
+.buttonDel {
+    width: auto;
+}
+#playlist {
+    width: 80%;
+    border: 1px solid #c00;
+}
+#playlist > ul > li {
+    height: 30px;
+}
+#playlist > ul > li > button {
+    margin-left: 20px;
+}
